@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>顯示 JSON</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <button id="fetchData">點擊獲取JSON會員數據</button>
+    <div id="result"></div>
+
+    <script>
+// document.getElementById("fetchData").addEventListener("click", function() {
+//   fetch("http://localhost:3001/testtest")
+//     .then(response => {
+//       if (!response.ok) {
+//         throw new Error("HTTP error, status = " + response.status);
+//       }
+//       return response.json();
+//     })
+//     .then(data => {
+//       console.log(data);
+//       document.getElementById("result").innerText = JSON.stringify(data);
+//     })
+//     .catch(error => {
+//       console.log("Fetch error:", error);
+//     });
+// });
+document.getElementById("fetchData").addEventListener("click", function() {
+  fetch("http://localhost:3001/testtest")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("HTTP error, status = " + response.status);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data);
+      document.getElementById("result").innerText = data.map(item => JSON.stringify(item)).join('\n');
+    })
+    .catch(error => {
+      console.log("Fetch error:", error);
+    });
+});
+
+    </script>
+</body>
+
+</html>

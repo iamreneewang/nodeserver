@@ -12282,12 +12282,12 @@ a i {
     font-size: 1.5m;
   }
 }
-.loginpage h1, .loginpage .h1 {
+.loginpage h1, .loginpage .h1, .registerpage h1, .registerpage .h1 {
   font-size: 2rem;
   text-align: center;
   color: var(--primary-color);
 }
-.loginpage .label-title {
+.loginpage .label-title, .registerpage .label-title {
   margin-bottom: 10px;
   font-size: 1.3rem;
 }/*# sourceMappingURL=all.css.map */

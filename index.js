@@ -17,6 +17,13 @@ app.get('/login', function(req, res){
   res.sendFile(path.join(__dirname, 'views', 'login.html'));
 });
 
+app.get('/register', function(req, res){
+  res.sendFile(path.join(__dirname, 'views', 'register.html'));
+});
+
+app.get('/test', function(req, res){
+  res.sendFile(path.join(__dirname, 'views', 'test.html'));
+});
 //這一段是給前端
 
 const db = mysql.createConnection({
@@ -60,7 +67,22 @@ app.post("/login", (req, res) => {
   );
 });
 
+app.post("/register", (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
 
+  db.query(
+    "INSERT INTO users (email, password) VALUES (?,?)",
+    [email, password],
+    (err, result) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send("Values Inserted");
+      }
+    }
+  );
+});
 
 app.post("/create", (req, res) => {
   const name = req.body.name;
@@ -91,6 +113,18 @@ app.get("/employees", (req, res) => {
     }
   });
 });
+
+
+app.get("/testtest", (req, res) => {
+  db.query("SELECT * FROM users", (err, result) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(result);
+    }
+  });
+});
+
 
 app.put("/update", (req, res) => {
   const id = req.body.id;

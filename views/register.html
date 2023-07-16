@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <title>Register</title>
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="all.css">
 </head>
@@ -16,29 +16,28 @@
       <div class="login">
         <div class="hero">
           <h1>美甲．美學．美麗<br>就在R&W美甲</h1>
-          <p>是新朋友嗎?<br>可以點擊這裡<a href="/register">建立新帳號</a></p>
+          <p>已經有帳號嗎?<br>可以點擊這裡<a href="/login">登入帳號</a></p>
         </div>
-        <div class="main loginpage">
-          <form method="POST" action="/login" id="loginForm">
-            <h1 id="loginTitle">會員登入</h1>
+        <div class="main registerpage">
+          <form method="POST" action="/register" id="registerForm">
+            <h1 id="loginTitle">會員註冊</h1>
             <p>
               <label for="email" class="label-title">帳號</label>
-              <input type="email" placeholder="請輸入帳號" id="email">
+              <input type="email" placeholder="請輸入電子郵件" id="email">
             </p>
             <p class="password">
               <label for="password" class="label-title">密碼</label>
               <input type="password" placeholder="請輸入密碼" id="password">
               <i class="fas fa-eye-slash" id="eye"></i>
               </input>
-              <a href="#">找回密碼</a>
             </p>
             <p>
-              <input type="submit" class="submit" value="登入">
+              <input type="submit" class="submit" value="註冊">
             </p>
           </form>
           <div class="options">
             <div class="separator">
-              <p>使用其他方式登入</p>
+              <p>使用其他方式註冊</p>
             </div>
             <ul>
               <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i>
@@ -54,7 +53,7 @@
   </div>
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" crossorigin="anonymous"></script>
-  <script src="login.js"></script>
+  <script src="register.js"></script>
 </body>
 
 </html>
