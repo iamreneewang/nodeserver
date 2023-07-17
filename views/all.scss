@@ -266,3 +266,124 @@ a i {
         font-size: 1.3rem;
     }
 }
+
+//***以下是首頁的CSS
+
+// .element {
+//   background-color: blue;
+//   transition: background-color 0.3s ease;
+// }
+
+// .element:hover {
+//   background-color: red;
+// }
+
+.navbar-nav .nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #7f6e9b;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: 		#6A5ACD;
+}
+
+.navbar-nav .nav-link:hover::before {
+  width: 100%;
+}
+
+.navbar {
+  background: transparent !important; 
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 0;
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
+
+.navbar-nav .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+.navbar {
+  background: transparent !important;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10;
+}
+
+.navbar-nav .dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.6em solid transparent;
+  border-bottom: 0;
+  border-left: 0.6em solid transparent;
+  /* Custom SVG chevron for the dropdown toggle */
+}
+
+.navbar-nav .nav-link {
+  position: relative; 
+  font-weight: bold; 
+}
+
+.navbar-nav .nav-link::before {
+  content: ""; 
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 70%; 
+  height:4px; /* Setting the thickness of the underline */
+  background: linear-gradient(
+    to right,
+    #7f6e9b,
+    #c9b7c7,
+    #f7e0b4
+  ); 
+  transform: scaleX(0); 
+  transform-origin: left; 
+  transition: transform 0.3s ease; 
+}
+
+.navbar-nav .nav-link:hover::before {
+  transform: scaleX(1); 
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 3rem !important;
+  padding-left: 3rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+@media (max-width: 600px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 0 !important;
+  }
+}
+
+
+//***以上是首頁的CSS
